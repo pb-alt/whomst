@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		for(var i = 0; i < 100; i++) {
 			a.push(word());
 		}
-		document.body.innerText += a.join("'\u200b")
+		document.body.innerText += a.join("'\u200b") + "'\u200b"
 	}
 });
 
@@ -31,7 +31,7 @@ document.addEventListener("scroll", function() {
 			for(var i = 0; i < 100; i++) {
 				a.push(word());
 			}
-			document.body.innerText += a.join("'\u200b")
+			document.body.innerText += a.join("'\u200b") + "'\u200b"
 		}
 	}
 });
