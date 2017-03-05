@@ -1,0 +1,41 @@
+<html>
+<head>
+<script type="text/javascript">
+var z = ['d', 'll', 's', 't', 'y', 've', 'st', 'tt', 'be', 'dn', 'vet', 're', 'n', 'ven', 'vehe', 'ten', 'on', 'nt', 'dist']
+var w = ['y\'all', 'shan', 'there', 'be', 'oughtn', 'mightn', 'whom', 'whom\'st']
+function arr_r(a) { return a[Math.floor(Math.random() * a.length)]}
+function word() {
+	var s = arr_r(w);
+	for(var i = 0; i < Math.floor(Math.random() * 2) + 1; i++) {
+		s += "\u200b'" + arr_r(z);
+	}
+	return s;
+}
+document.addEventListener("DOMContentLoaded", function() {
+	while(document.body.scrollHeight < window.innerHeight * 2) {
+		var a = []
+		for(var i = 0; i < 100; i++) {
+			a.push(word());
+		}
+		document.body.innerText += a.join("\u200b'")
+	}
+});
+
+document.addEventListener("scroll", function() {
+	var y = window.scrollY;
+	var wh = window.innerHeight;
+	if(y > document.body.scrollHeight - wh * 3) {
+		while(y > document.body.scrollHeight - wh * 4) {
+			var a = []
+			for(var i = 0; i < 100; i++) {
+				a.push(word());
+			}
+			document.body.innerText += a.join("\u200b'")
+		}
+	}
+});
+</script>
+<body>
+whom'st'd've
+</body>
+</html>
